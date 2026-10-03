@@ -1,0 +1,11 @@
+{
+  "AutoStartWorldName": "Virunum",
+  "AutoCreateAndLoadWorld": true,
+  "AutoCreateWorldSize": 1,
+  "AutoCreateWorldSeed": null,
+  "Password": "",
+  "Port": 8050,
+  "MaxPlayers": 8,
+  "SleepThresholdMs": -1,
+  "EnableCheats": false
+}

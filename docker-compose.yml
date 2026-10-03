@@ -1,0 +1,16 @@
+services:
+  romestead-server:
+    build: .
+    container_name: my_romestead_server
+    #restart: unless-stopped
+    ports:
+      - "8050:8050/udp"
+    volumes:
+      - ./steamcmd_login_volume:/home/steam/Steam
+      - ./saved_worlds:/app/server/saved_worlds
+      - ./config.json:/app/server/config.json
+    # without stdin Romestead shuts down
+    #   if console access is still not working in 'docker compose' 
+    #     -> use 'docker run -it' instead
+    stdin_open: true
+    tty: true
