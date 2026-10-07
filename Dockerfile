@@ -25,7 +25,8 @@ COPY --from=downloader /home/steam/download/romestead /app/server
 # chown needed because Romestead needs write access
 COPY --chown=app default_config.json /app/server/config.json
 
-# create empty directory
+# create empty directories with write access
+WORKDIR /app/server/saved_worlds
 WORKDIR /GameAnalytics
 
 EXPOSE 8050/udp
