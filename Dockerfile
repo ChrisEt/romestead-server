@@ -7,6 +7,10 @@
 
 FROM cm2network/steamcmd:latest AS downloader
 WORKDIR /home/steam
+
+# if version on steam has changed, this will ensure a new download:
+ADD https://api.steamcmd.net/v1/info/4763510 /tmp/steam_api_cache_buster
+
 RUN steamcmd/steamcmd.sh +force_install_dir /home/steam/download/romestead \
   +login anonymous \
   +app_update 4763510 validate \
